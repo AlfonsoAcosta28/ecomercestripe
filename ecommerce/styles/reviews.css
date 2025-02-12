@@ -1,0 +1,167 @@
+.reviwes-container {
+    /* border: 1px solid rgb(195, 255, 0); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.reviews-stars {
+    display: flex;
+    color: rgb(235, 235, 1);
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 80%;
+}
+
+.reviews-stars:hover {
+    cursor: pointer;
+}
+
+.reviews-coment {
+    /* border: 1px solid gray; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* Apila los elementos verticalmente */
+    align-items: center;
+}
+
+.reviews-coment textarea {
+    width: 80%;
+    height: 5rem;
+    margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.reviews-coment .reviews-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.reviews-coment button {
+    padding: 10px 20px;
+    background-color: #f02d34;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    border-radius: 10px;
+}
+
+.reviews-coment button:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.reviews-coment span {
+    font-size: 1rem;
+    width: 100%;
+    color: grey;
+    text-align: center;
+}
+
+
+.reviews2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-users {
+    /* border: 1px solid red; */
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .reviews-users {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .reviews-users {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.review-user {
+    border: 1px solid rgba(128, 128, 128, 0.75);
+    border-radius: 10px;
+    max-width: 350px;
+    padding: 10px;
+}
+
+.review-user-info-top {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+}
+
+.review-user-info {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+    /* border: 1px solid rgb(26, 255, 0); */
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.review-user-info img {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    padding: 2px;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); /* Gradiente estilo Instagram */
+  
+}
+
+.review-user-name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid rgb(17, 0, 255) */
+}
+
+.review-user-name span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(63, 63, 63);
+}
+
+.review-user-stars {
+    display: flex;
+    color: rgb(235, 235, 1);
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-user-fecha {
+    font-size: 12px;
+    color: rgb(63, 63, 63);
+}
+
+.review-user p {
+    font-size: 14px;
+    color: rgb(63, 63, 63);
+    text-align: justify;
+    margin-top: 10px;
+}

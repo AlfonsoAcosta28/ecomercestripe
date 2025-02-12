@@ -10,7 +10,7 @@ const Category = ({visibleCategories}) => {
                         alt={category}
                         className="h-[150px] w-[200px] object-cover rounded-md shadow-lg"
                     />
-                    <div className="text-center font-bold p-2">{category}</div>
+                    <div className="category-details">{category}</div>
                 </div>
             ))}
         </div>

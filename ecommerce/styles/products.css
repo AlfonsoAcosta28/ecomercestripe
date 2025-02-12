@@ -1,0 +1,56 @@
+/* Estilos generales */
+.products-page {
+    display: flex;
+    gap: 20px;
+    padding: 40px 40px 20px 20px;
+    width: 90%;
+    /* justify-content: center; */
+    /* border: 1px solid #000000; */
+    /* gap: 20px; */
+}
+
+/* Contenedor de filtros */
+.products-filter-container {
+    /* border: 1px solid #000000; */
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.products-filter-container h2 {
+    margin-bottom: 15px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.products-filter-container label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.products-filter-container input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.products-filter-container select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+/* Contenedor de productos */
+
+.products-page-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    /* border: 1px solid #000000; */
+}
+

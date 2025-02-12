@@ -9,13 +9,11 @@ const AboutUs = () => {
             <div class="aboutus-section">
                 <h3>Descripción</h3>
                 <p>En Oops Dulcería, ofrecemos una amplia variedad de dulces nacionales e importados para satisfacer todos los gustos. Nuestra misión es llevar alegría y sonrisas a través de nuestros productos de alta calidad.</p>
-
                 <h3>Contacto</h3>
                 <div class="contact-info">
                     <table className='about-us-table'>
                         <thead>
                             <tr>
-
                                 <th width="30%"></th>
                                 <th width="70%"></th>
                             </tr>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-import { Product, FooterBanner, HeroBanner, Category, AboutUs } from '@/components';
+import { Product, HeroBanner, Category, AboutUs } from '@/components';
 import { client } from '../lib/client';
 import { GrNext } from 'react-icons/gr';
 import { GrPrevious } from 'react-icons/gr';
+import Link from 'next/link';
 
 const Home = ({ products, bannerData }) => {
   const categories = ['chocolate', 'gomitas', 'cereal', 'caramelos'];
@@ -34,21 +35,31 @@ const Home = ({ products, bannerData }) => {
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       <div className="heading">
         <h2>Productos</h2>
-        <p>Gran variedad de dulces</p>
+        {/* <p>Gran variedad de dulces</p> */}
       </div>
 
       <div className="products-container">
         {products?.map((product) => (
           <Product key={product._id} product={product} />
         ))}
+
+
+      </div>
+
+      <div className='container-ver-mas'>
+        <Link href={`/products`}>
+          <div className='products-ver-mas'>
+            <span className=''>Ver mas</span>
+          </div>
+        </Link>
       </div>
 
       <div className="heading">
         <h2>Categorías</h2>
-
       </div>
 
       <div>
+        <Category visibleCategories={visibleCategories} />
         <div className="category-options">
           <button
             onClick={handlePrevious}
@@ -68,7 +79,6 @@ const Home = ({ products, bannerData }) => {
           </button>
         </div>
 
-        <Category visibleCategories={visibleCategories} />
 
 
       </div>

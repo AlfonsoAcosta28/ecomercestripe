@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
-import { Product } from '../../components';
+import { MayYouLike, Reviews } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
-    const { decQty, incQty, qty, onAdd} = useStateContext();
+    const { decQty, incQty, qty, onAdd } = useStateContext();
 
     // const handleBuyNow = () => {
     //     onAdd(product, qty);
@@ -17,7 +17,7 @@ const ProductDetails = ({ product, products }) => {
     // }
 
     return (
-        <div>
+        <div style={{ width: '100%' }}>
             <div className="product-detail-container">
                 <div>
                     <div className="image-container">
@@ -38,7 +38,7 @@ const ProductDetails = ({ product, products }) => {
                 <div className="product-detail-desc">
                     <h1>{name}</h1>
                     <div className="reviews">
-                        <div>
+                        <div className='flex '>
                             <AiFillStar />
                             <AiFillStar />
                             <AiFillStar />
@@ -49,15 +49,15 @@ const ProductDetails = ({ product, products }) => {
                             (20)
                         </p>
                     </div>
-                    <h4>Details: </h4>
+                    <h4>Detalles: </h4>
                     <p>{details}</p>
                     <p className="price">${price}</p>
                     <div className="quantity">
                         <h3>Quantity:</h3>
                         <p className="quantity-desc">
-                            <span className="minus" onClick={decQty}><AiOutlineMinus /></span>
-                            <span className="num">{qty}</span>
-                            <span className="plus" onClick={incQty}><AiOutlinePlus /></span>
+                            <span className="minus1" onClick={decQty}><AiOutlineMinus /></span>
+                            <span className="num1">{qty}</span>
+                            <span className="plus1" onClick={incQty}><AiOutlinePlus /></span>
                         </p>
                     </div>
                     <div className="buttons">
@@ -67,16 +67,9 @@ const ProductDetails = ({ product, products }) => {
                 </div>
             </div>
 
-            <div className="maylike-products-wrapper">
-                <h2>You may also like</h2>
-                <div className="marquee">
-                    <div className="maylike-products-container track">
-                        {products.map((item) => (
-                            <Product key={item._id} product={item} />
-                        ))}
-                    </div>
-                </div>
-            </div>
+            <Reviews />
+
+            <MayYouLike products={products} />
         </div>
     )
 }
