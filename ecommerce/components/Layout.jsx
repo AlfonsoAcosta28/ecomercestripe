@@ -1,35 +1,35 @@
 import React from 'react'
-
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Navbar from './Navbar'
 import Footer from './Footer'
-// import Link from 'next/link'
 
 const Layout = ({ children }) => {
+  const router = useRouter();
+  const hideLayout = router.pathname === '/login'; // Oculta Navbar y Footer en /login
+
   return (
     <div>
+      <Head>
+        <title>Oops Dulceria</title>
+      </Head>
       <div className='layout'>
-
-        <Head>
-          <title>Oops Dulceria</title>
-        </Head>
-
-        <header>
-          <Navbar>
-
-          </Navbar>
-        </header>
+        {!hideLayout && (
+          <header>
+            <Navbar />
+          </header>
+        )}
         <main className='main-container'>
           {children}
         </main>
+        {!hideLayout && (
+          <footer>
+            <Footer />
+          </footer>
+        )}
       </div>
-      <footer>
-        <Footer>
-
-        </Footer>
-      </footer>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

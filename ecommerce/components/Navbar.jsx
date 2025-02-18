@@ -52,6 +52,7 @@ const Navbar = () => {
                 <ul>
                   <li><CgProfile className='dropdown-icon' /><Link href='/profile'>Perfil</Link></li>
                   <li><IoIosLogOut className='dropdown-icon'/><button onClick={() => alert('Cerrar sesión')}>Cerrar Sesión</button></li>
+                  <li><Link href={'/login'}>Login</Link></li>
                 </ul>
               </div>
             )}
